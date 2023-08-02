@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "926106464257",
+    "project_id": "notificationsreader-8c77d",
+    "storage_bucket": "notificationsreader-8c77d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926106464257:android:de4760642df02544fa1000",
+        "android_client_info": {
+          "package_name": "dev.maxsiomin.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926106464257-iqn8veb7b9tr9497vf5an30evki7emki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcb7r3JaSnh0wm-0NhDdDvCOQoVLFG0yM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926106464257-iqn8veb7b9tr9497vf5an30evki7emki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
