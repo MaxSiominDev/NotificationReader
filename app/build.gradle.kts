@@ -5,6 +5,7 @@ plugins {
     id("com.google.devtools.ksp") version "1.9.0-1.0.12"
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -15,8 +16,8 @@ android {
         applicationId = "dev.maxsiomin.myapplication"
         minSdk = 26
         targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.$versionCode"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -42,6 +43,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.0"
@@ -79,4 +81,11 @@ dependencies {
 
     // Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:2.5.2")
+
+    implementation("com.google.dagger:hilt-android:2.46.1")
+    kapt("com.google.dagger:hilt-compiler:2.46.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0-alpha01")
+
+    // Logging
+    implementation("com.jakewharton.timber:timber:5.0.1")
 }
