@@ -5,6 +5,7 @@ import dev.maxsiomin.myapplication.domain.model.SavedNotification
 
 fun SavedNotification.toNotificationEntity(): NotificationEntity {
     return NotificationEntity(
+        id = 0,
         app = app,
         time = time,
         title = title,

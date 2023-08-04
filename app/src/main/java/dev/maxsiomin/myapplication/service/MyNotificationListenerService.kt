@@ -35,6 +35,8 @@ class MyNotificationListenerService : NotificationListenerService() {
 
         val pkg = sbn.packageName ?: ""
 
+        if (pkg in ignorePackages) return
+
         val entity = NotificationEntity(
             id = 0,
             app = getApplicationByPackageName(pkg),
@@ -67,6 +69,10 @@ class MyNotificationListenerService : NotificationListenerService() {
 
     companion object {
         const val NOTIFICATION_DELETED_BY_TELEGRAM = 8
+
+        val ignorePackages = listOf(
+            "ru.yandex.music"
+        )
 
         fun isTelegramPackage(pkg: String): Boolean {
             val telegramApk = "org.telegram.messenger.web"

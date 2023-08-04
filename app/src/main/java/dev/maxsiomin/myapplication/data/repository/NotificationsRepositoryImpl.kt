@@ -20,6 +20,8 @@ class NotificationsRepositoryImpl @Inject constructor(
     override suspend fun loadAllNotifications(): List<SavedNotification> {
         return db.dao.loadAllNotifications().map {
             it.toSavedNotification()
-        }
+        }.sortedBy {
+            it.time
+        }.reversed()
     }
 }
