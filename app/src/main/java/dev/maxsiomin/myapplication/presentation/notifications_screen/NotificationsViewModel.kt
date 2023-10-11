@@ -36,4 +36,16 @@ class NotificationsViewModel @Inject constructor(
         }
     }
 
+    sealed class Event {
+        data object Refresh : Event()
+    }
+
+    fun onEvent(event: Event) {
+        when (event) {
+            is Event.Refresh -> {
+                loadAllNotifications()
+            }
+        }
+    }
+
 }

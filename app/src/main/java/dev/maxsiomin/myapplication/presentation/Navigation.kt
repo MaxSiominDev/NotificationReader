@@ -28,7 +28,7 @@ fun Navigation() {
             route = Screen.NotificationsScreen.route
         ) {
             val viewModel = hiltViewModel<NotificationsViewModel>()
-            NotificationsScreen(viewModel.state)
+            NotificationsScreen(viewModel.state, viewModel::onEvent)
         }
     }
 }
