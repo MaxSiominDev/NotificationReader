@@ -8,6 +8,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import dev.maxsiomin.myapplication.data.local.NotificationsDatabase
+import dev.maxsiomin.myapplication.util.NotificationChecker
 import javax.inject.Singleton
 
 @Module
@@ -22,6 +23,12 @@ object AppModule {
             NotificationsDatabase::class.java,
             "Notifications DB"
         ).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideNotificationChecker(@ApplicationContext context: Context): NotificationChecker {
+        return NotificationChecker(context)
     }
 
 }

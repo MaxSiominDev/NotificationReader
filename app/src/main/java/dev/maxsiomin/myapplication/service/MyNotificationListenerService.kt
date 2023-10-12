@@ -71,7 +71,10 @@ class MyNotificationListenerService : NotificationListenerService() {
         const val NOTIFICATION_DELETED_BY_TELEGRAM = 8
 
         val ignorePackages = listOf(
-            "ru.yandex.music"
+            "ru.yandex.music",
+            "android",
+            "com.coloros.alarmclock",
+            "com.yandex.browser",
         )
 
         fun isTelegramPackage(pkg: String): Boolean {
