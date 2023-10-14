@@ -4,6 +4,10 @@ import dev.maxsiomin.myapplication.domain.model.SavedNotification
 
 data class NotificationsScreenState(
 
-    val notificationsList: List<SavedNotification>,
+    val notificationsList: List<SavedNotification> = emptyList(),
+
+    val searchBoxExpanded: Boolean = false,
+
+    val searchBoxContent: String = "",
 
 )

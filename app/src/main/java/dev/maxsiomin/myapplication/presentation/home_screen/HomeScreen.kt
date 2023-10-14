@@ -60,14 +60,13 @@ fun HomeScreen(navController: NavController, state: HomeState, onEvent: (HomeVie
             Button(
                 onClick = {
                     val intent = Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS")
-                    // TODO how to start activity from composable
                     context.startActivity(intent)
                 }) {
                 Text(text = "Notifications Settings")
             }
             Button(
                 onClick = {
-                    navController.navigate(Screen.NotificationsScreen.route)
+                    onEvent(HomeViewModel.Event.OnViewNotificationClicked(navController))
                 }) {
                 Text(text = "View notifications")
             }

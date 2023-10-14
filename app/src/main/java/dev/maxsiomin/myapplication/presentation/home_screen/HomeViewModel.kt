@@ -4,7 +4,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavController
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dev.maxsiomin.myapplication.presentation.Screen
 import dev.maxsiomin.myapplication.util.NotificationChecker
 import javax.inject.Inject
 
@@ -19,11 +21,13 @@ class HomeViewModel @Inject constructor(private val notificationChecker: Notific
 
     sealed class Event {
         data object CheckIfHasNotificationPermission : Event()
+        data class OnViewNotificationClicked(val navController: NavController) : Event()
     }
 
     fun onEvent(event: Event) {
         when (event) {
             is Event.CheckIfHasNotificationPermission -> updateHomeStateIfNotificationPermissionChanged()
+            is Event.OnViewNotificationClicked -> event.navController.navigate(Screen.NotificationsScreen.route)
         }
     }
 

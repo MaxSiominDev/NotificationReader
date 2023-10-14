@@ -27,8 +27,8 @@ fun Navigation() {
         composable(
             route = Screen.NotificationsScreen.route
         ) {
-            val viewModel = hiltViewModel<NotificationsViewModel>()
-            NotificationsScreen(viewModel.state, viewModel::onEvent)
+            //val viewModel = hiltViewModel<NotificationsViewModel>()
+            NotificationsScreen(navController = navController)
         }
     }
 }
