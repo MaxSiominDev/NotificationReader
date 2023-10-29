@@ -23,6 +23,7 @@ class NotificationsViewModel @Inject constructor(
 ) : ViewModel() {
 
     var state by mutableStateOf(NotificationsScreenState())
+        private set
 
     private var notificationsList = listOf<SavedNotification>()
 

@@ -8,7 +8,6 @@ import androidx.navigation.compose.rememberNavController
 import dev.maxsiomin.myapplication.presentation.home_screen.HomeScreen
 import dev.maxsiomin.myapplication.presentation.home_screen.HomeViewModel
 import dev.maxsiomin.myapplication.presentation.notifications_screen.NotificationsScreen
-import dev.maxsiomin.myapplication.presentation.notifications_screen.NotificationsViewModel
 
 @Composable
 fun Navigation() {

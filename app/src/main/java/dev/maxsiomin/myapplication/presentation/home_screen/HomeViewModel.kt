@@ -18,6 +18,7 @@ class HomeViewModel @Inject constructor(private val notificationChecker: Notific
             notificationChecker.hasNotificationReadingPermission()
         )
     )
+        private set
 
     sealed class Event {
         data object CheckIfHasNotificationPermission : Event()
