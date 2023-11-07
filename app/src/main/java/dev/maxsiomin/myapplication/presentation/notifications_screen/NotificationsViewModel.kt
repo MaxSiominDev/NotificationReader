@@ -10,9 +10,11 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.maxsiomin.myapplication.domain.model.SavedNotification
 import dev.maxsiomin.myapplication.domain.repository.NotificationsRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -36,8 +38,8 @@ class NotificationsViewModel @Inject constructor(
         data class Navigate(val navigate: NavController.() -> Unit) : UiEvent()
     }
 
-    private val _eventFlow = MutableSharedFlow<UiEvent>()
-    val eventFlow = _eventFlow.asSharedFlow()
+    private val _eventFlow = Channel<UiEvent>()
+    val eventFlow = _eventFlow.receiveAsFlow()
 
     private fun loadAllNotifications() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -95,7 +97,7 @@ class NotificationsViewModel @Inject constructor(
 
     private fun goBack() {
         viewModelScope.launch {
-            _eventFlow.emit(
+            _eventFlow.send(
                 UiEvent.Navigate { popBackStack() }
             )
         }
