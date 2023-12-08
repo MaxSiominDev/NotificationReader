@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -105,8 +106,8 @@ fun NotificationsScreenScaffold(
                 .fillMaxSize()
                 .padding(values)
         ) {
-            items(state.notificationsList.size) { index ->
-                NotificationItem(savedNotification = state.notificationsList.elementAt(index))
+            items(state.notificationsList) { item ->
+                NotificationItem(savedNotification = item)
             }
         }
     }
