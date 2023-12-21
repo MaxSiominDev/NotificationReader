@@ -3,6 +3,7 @@ package dev.maxsiomin.myapplication.presentation.notifications_screen
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
@@ -21,7 +22,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NotificationsViewModel @Inject constructor(
-    private val repo: NotificationsRepository
+    private val repo: NotificationsRepository,
+    savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     var state by mutableStateOf(NotificationsScreenState())
