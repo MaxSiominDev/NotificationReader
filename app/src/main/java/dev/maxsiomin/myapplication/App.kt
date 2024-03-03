@@ -2,7 +2,7 @@ package dev.maxsiomin.myapplication
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
-import dev.maxsiomin.myapplication.util.isDebug
+import dev.maxsiomin.myapplication.core.util.isDebug
 import timber.log.Timber
 
 @HiltAndroidApp

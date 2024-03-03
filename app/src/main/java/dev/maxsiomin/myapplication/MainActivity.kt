@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import dagger.hilt.android.AndroidEntryPoint
-import dev.maxsiomin.myapplication.presentation.Navigation
+import dev.maxsiomin.myapplication.core.presentation.Navigation
 import dev.maxsiomin.myapplication.ui.theme.NotificationReaderTheme
 
 @AndroidEntryPoint
