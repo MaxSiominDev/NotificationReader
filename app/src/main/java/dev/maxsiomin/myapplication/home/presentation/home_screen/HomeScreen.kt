@@ -4,9 +4,11 @@ import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -53,11 +55,12 @@ fun HomeScreen(navController: NavController, state: HomeState, onEvent: (HomeVie
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .fillMaxWidth()
+                .width(IntrinsicSize.Max)
                 .align(Alignment.Center)
         ) {
             val context = LocalContext.current
             Button(
+                modifier = Modifier.fillMaxWidth(),
                 onClick = {
                     val intent = Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS")
                     context.startActivity(intent)
@@ -65,6 +68,7 @@ fun HomeScreen(navController: NavController, state: HomeState, onEvent: (HomeVie
                 Text(text = "Notifications Settings")
             }
             Button(
+                modifier = Modifier.fillMaxWidth(),
                 onClick = {
                     onEvent(HomeViewModel.Event.OnViewNotificationClicked(navController))
                 }) {
