@@ -97,4 +97,8 @@ dependencies {
 
     // Logging
     implementation(libs.timber)
+
+    // Dagger
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
 }

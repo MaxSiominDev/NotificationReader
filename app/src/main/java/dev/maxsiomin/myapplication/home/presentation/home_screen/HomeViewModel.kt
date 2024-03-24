@@ -7,15 +7,15 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.maxsiomin.myapplication.core.presentation.Screen
-import dev.maxsiomin.myapplication.core.util.NotificationChecker
+import dev.maxsiomin.myapplication.core.util.NotificationPermissionChecker
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val notificationChecker: NotificationChecker): ViewModel() {
+class HomeViewModel @Inject constructor(private val notificationPermissionChecker: NotificationPermissionChecker): ViewModel() {
 
     var state by mutableStateOf(
         HomeState(
-            notificationChecker.hasNotificationReadingPermission()
+            notificationPermissionChecker.hasNotificationReadingPermission()
         )
     )
         private set
@@ -34,7 +34,7 @@ class HomeViewModel @Inject constructor(private val notificationChecker: Notific
 
     private fun updateHomeStateIfNotificationPermissionChanged() {
         state = state.copy(
-            hasNotificationPermission = notificationChecker.hasNotificationReadingPermission()
+            hasNotificationPermission = notificationPermissionChecker.hasNotificationReadingPermission()
         )
     }
 

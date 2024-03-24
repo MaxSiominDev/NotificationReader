@@ -63,7 +63,6 @@ fun NotificationsScreen(
     }
 
     val lifecycleOwner = LocalLifecycleOwner.current
-
     LaunchedEffect(lifecycleOwner.lifecycle) {
         lifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
             withContext(Dispatchers.Main.immediate) {

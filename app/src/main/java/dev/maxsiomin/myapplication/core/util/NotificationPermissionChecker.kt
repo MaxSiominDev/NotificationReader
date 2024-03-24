@@ -4,7 +4,7 @@ import android.content.Context
 import android.provider.Settings
 import javax.inject.Inject
 
-class NotificationChecker @Inject constructor(private val context: Context) {
+class NotificationPermissionChecker @Inject constructor(private val context: Context) {
 
     fun hasNotificationReadingPermission(): Boolean {
         // Example of such a string

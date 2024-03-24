@@ -11,7 +11,7 @@ import dev.maxsiomin.myapplication.core.data.local.NotificationsDao
 import dev.maxsiomin.myapplication.core.data.local.NotificationsDatabase
 import dev.maxsiomin.myapplication.core.data.repository.NotificationsRepositoryImpl
 import dev.maxsiomin.myapplication.notifications.domain.repository.NotificationsRepository
-import dev.maxsiomin.myapplication.core.util.NotificationChecker
+import dev.maxsiomin.myapplication.core.util.NotificationPermissionChecker
 import javax.inject.Singleton
 
 @Module
@@ -35,8 +35,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideNotificationChecker(@ApplicationContext context: Context): NotificationChecker {
-        return NotificationChecker(context)
+    fun provideNotificationChecker(@ApplicationContext context: Context): NotificationPermissionChecker {
+        return NotificationPermissionChecker(context)
     }
 
     @Provides
