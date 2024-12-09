@@ -1,25 +1,25 @@
 [versions]
-activityCompose = "1.8.2"
-composeBom = "2024.02.01"
-daggerCompiler = "2.51"
-espressoCore = "3.5.1"
-firebaseAnalyticsKtx = "21.5.1"
-firebaseCrashlyticsKtx = "18.6.2"
+activityCompose = "1.9.3"
+composeBom = "2024.11.00"
+daggerCompiler = "2.51.1"
+espressoCore = "3.6.1"
+firebaseAnalyticsKtx = "22.1.2"
+firebaseCrashlyticsKtx = "19.3.0"
 hiltNavigationCompose = "1.2.0"
-hiltCompiler = "2.50"
-hiltAndroid = "2.50"
-junitVersion = "1.1.5"
+hiltCompiler = "2.51.1"
+hiltAndroid = "2.51.1"
+junitVersion = "1.2.1"
 junit = "4.13.2"
-lifecycleRuntimeKtx = "2.7.0"
-coreKtx = "1.12.0"
+lifecycleRuntimeKtx = "2.8.7"
+coreKtx = "1.15.0"
 timber = "5.0.1"
 roomKtx = "2.6.1"
 roomCompiler = "2.6.1"
 roomRuntime = "2.6.1"
-gradle = "8.3.0"
-googleServices = "4.4.1"
-firebaseCrashlyticsGradle = "2.9.9"
-kotlin = "1.9.0"
+gradle = "8.3.2"
+googleServices = "4.4.2"
+firebaseCrashlyticsGradle = "3.0.2"
+kotlin = "2.0.21"
 daggerHiltAndroidPlugin = "2.46.1"
 
 [libraries]
@@ -56,3 +56,4 @@ firebaseCrashlyticsGradleClasspath = { module = "com.google.firebase:firebase-cr
 androidApplication = { id = "com.android.application", version.ref = "gradle" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 daggerHiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "daggerHiltAndroidPlugin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
